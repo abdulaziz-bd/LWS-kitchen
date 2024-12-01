@@ -25,31 +25,31 @@ export default function RecipePage({ params: { recipeName } }) {
   mightLikeRecipes = mightLikeRecipes.filter((r) => r.title !== recipe.title);
 
   return (
-    <main class="container mx-auto px-4 py-8 mt-[100px]">
+    <main className="container mx-auto px-4 py-8 mt-[100px]">
       <article>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">{recipe.title}</h1>
-        <div class="flex items-center space-x-4 mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">{recipe.title}</h1>
+        <div className="flex items-center space-x-4 mb-6">
           <Image
             src="/avater.png"
             alt={recipe?.author}
-            class="w-8 h-8 rounded-full"
+            className="w-8 h-8 rounded-full"
             width={32}
             height={32}
           />
-          <span class="text-gray-600">{recipe?.author}</span>
-          <span class="text-gray-400">|</span>
-          <span class="text-gray-600">{recipe.cooking_time}</span>
-          <span class="text-gray-400">|</span>
-          <span class="text-gray-600">
+          <span className="text-gray-600">{recipe?.author}</span>
+          <span className="text-gray-400">|</span>
+          <span className="text-gray-600">{recipe.cooking_time}</span>
+          <span className="text-gray-400">|</span>
+          <span className="text-gray-600">
             {getFormattedDate(recipe.published_date)}
           </span>
         </div>
-        <div class="flex justify-between items-center mb-8">
-          <div class="flex space-x-4">
-            <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full">
+        <div className="flex justify-between items-center mb-8">
+          <div className="flex space-x-4">
+            <button className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -57,10 +57,10 @@ export default function RecipePage({ params: { recipeName } }) {
               </svg>
               Share
             </button>
-            <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full">
+            <button className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 inline-block mr-2"
+                className="h-5 w-5 inline-block mr-2"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -73,35 +73,35 @@ export default function RecipePage({ params: { recipeName } }) {
         <Image
           src="/single-banner.jpg"
           alt="Cooking Image"
-          class="w-full h-auto mb-8 rounded-lg"
+          className="w-full h-auto mb-8 rounded-lg"
           width={800}
           height={400}
         />
-        <p class="mb-8">{recipe?.description}</p>
+        <p className="mb-8">{recipe?.description}</p>
 
         <img
           src={`/thumbs/${recipe?.thumbnail}`}
           alt="Cooking in kitchen"
-          class="w-full h-auto mb-8 rounded-lg max-w-xl mx-auto"
+          className="w-full h-auto mb-8 rounded-lg max-w-xl mx-auto"
         />
 
-        <p class="mb-8">{recipe?.description}</p>
+        <p className="mb-8">{recipe?.description}</p>
       </article>
 
       {mightLikeRecipes.length > 0 && (
-        <section class="my-12">
-          <h2 class="text-3xl font-bold mb-8">You might also like</h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <section className="my-12">
+          <h2 className="text-3xl font-bold mb-8">You might also like</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {mightLikeRecipes.map((recipe, index) => (
               <div key={index}>
                 <Image
                   src={`/thumbs/${recipe.thumbnail}`}
                   alt={recipe.title}
-                  class="w-full h-60 object-cover rounded-lg mb-2"
+                  className="w-full h-60 object-cover rounded-lg mb-2"
                   width={100}
                   height={60}
                 />
-                <h3 class="font-semibold">{recipe.title}</h3>
+                <h3 className="font-semibold">{recipe.title}</h3>
               </div>
             ))}
           </div>

@@ -15,19 +15,19 @@ export default function PopularCategories({ categories }) {
         {topCategories.map((category) => (
           <Link
             key={category.id}
-            href={`/recipes/${category.id}`}
-            class="cursor-pointer text-center group"
+            href={`/${category.name}`}
+            className="cursor-pointer text-center group"
           >
-            <div class="overflow-hidden rounded-full mb-2 w-20 h-20 mx-auto">
+            <div className="overflow-hidden rounded-full mb-2 w-20 h-20 mx-auto">
               <Image
                 src={category.image}
                 alt="Chocolate"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 width={100}
                 height={100}
               />
             </div>
-            <p class="transition-transform duration-300 group-hover:scale-105">
+            <p className="transition-transform duration-300 group-hover:scale-105">
               {category.name}
             </p>
           </Link>

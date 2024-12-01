@@ -15,13 +15,13 @@ export default function SuperDelicious({ recipes }) {
           >
             <Image
               src={`/thumbs/${recipe.thumbnail}`}
-              class="w-full h-[300px] object-cover rounded-lg mb-4"
+              className="w-full h-[300px] object-cover rounded-lg mb-4"
               width={100}
               height={300}
               alt={recipe.title}
             />
-            <h3 class="text-xl font-semibold mb-2">{recipe.title}</h3>
-            <div class="flex items-center text-yellow-500 mb-2">
+            <h3 className="text-xl font-semibold mb-2">{recipe.title}</h3>
+            <div className="flex items-center text-yellow-500 mb-2">
               {[...Array(5)].map((_, i) => {
                 if (i < recipe.rating.average_rating) {
                   return <FillStar key={i} />;
@@ -30,7 +30,7 @@ export default function SuperDelicious({ recipes }) {
                 }
               })}
             </div>
-            <p class="text-gray-600">{recipe.cooking_time}</p>
+            <p className="text-gray-600">{recipe.cooking_time}</p>
           </Link>
         ))}
       </div>
