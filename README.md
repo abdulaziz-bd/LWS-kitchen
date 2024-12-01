@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LWS Kitchen - Recipe Website
 
-## Getting Started
+A dynamic recipe website built with Next.js and Tailwind CSS that showcases various recipes across different categories.
 
-First, run the development server:
+## Features
+
+### Home Page
+
+- **Hero Section**
+  - Displays a featured recipe
+  - "View Recipe" button links to recipe details
+- **Super Delicious Section**
+  - Shows top 3 recipes based on rating count
+  - Clickable cards leading to recipe details
+- **Popular Categories Section**
+  - Displays 6-8 categories with highest recipe counts
+  - Clicking categories leads to category-specific recipe listings
+  - "View All" button redirects to categories page
+- **Hand-Picked Collections**
+  - Showcases 2 curated recipes
+- **Latest Recipes Section**
+  - Features 4 most recent recipes
+  - Date-based sorting
+  - Clickable cards leading to recipe details
+
+### Navigation & Routing
+
+- Dynamic routing structure: `domain.com/:category/:recipe`
+- Category navigation through navbar and "Popular Categories" section
+- Comprehensive category listing page
+- Recipe listing page showing category-specific recipes with count
+
+### Recipe Details Page
+
+- Dynamic content including:
+  - Recipe title
+  - Author name
+  - Publication date
+  - Recipe image
+- "You might also like" section featuring 4 related recipes from the same category
+- Related recipes are clickable and lead to their respective detail pages
+
+### Data Management
+
+- All recipe data stored in structured JSON format
+- Local data parsing from 'dist/data' folder
+- No external API calls
+
+## Technical Implementation
+
+### Data Structure
+
+```
+dist/
+  └── data/
+      └── recipes.json
+      └── categories.json
+      └── ...
+```
+
+### Key Pages
+
+- Home (`/`)
+- Categories (`/categories`)
+- Category Recipes (`/recipes`)
+- Recipe Details (`/:category/:recipe`)
+
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/abdulaziz-bd/LWS-kitchen.git
+```
+
+2. Install dependencies
+
+```bash
+cd lws-kitchen
+npm install
+```
+
+3. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Built With
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Next.js
+- Tailwind CSS
+- React
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.js
+│   ├── page.js
+│   ├── categories/
+│   │   └── page.js
+│   └── [category]/
+│       └── [recipe]/
+│           └── page.js
+├── components/
+│   ├── Header/
+│   ├── Footer/
+│   ├── RecipeCard/
+│   └── ...
+└── lib/
+    └── data.js
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👤 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Md Abdul Aziz**
 
-## Deploy on Vercel
+- Github: [@abdulaziz-bd](https://github.com/abdulaziz-bd)
+- LinkedIn: [abdulazizfahad](https://linkedin.com/in/abdulazizfahad)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is [MIT](./LICENSE) licensed.
